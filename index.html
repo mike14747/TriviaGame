@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CDNs for jQuery, Popper.js and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- my javascript -->
+    <script src="js/app.js"></script>
+
+    <!-- include my bootstrap companion style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Baseball Trivia</title>
+</head>
+
+<body>
+
+    <div class="container bg-white border my-2">
+
+        <div class="row h_bg border">
+
+            <div class="col-9 header_bg p-4">
+                <h1 class="text-bolder">Baseball Trivia<span class="small">... test your baseball knowledge!</span></h1>
+            </div>
+
+            <div id="start_div" class="col-3 p-4 text-center">
+                <button id="start_btn" type="button" class="btn-lg btn-success">Start Game</button>
+            </div>
+
+        </div>
+
+        <div id="status" class="row bg-info">
+
+            <div class="col-4 d-flex justify-content-center">
+                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Correct: <span id="correct">0</span></p>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Incorrect: <span id="incorrect">0</span></p>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Remaining: <span id="remaining">10</span></p>
+            </div>
+
+        </div>
+
+        <div id="game_area" class="row">
+
+            <div id="timer_info" class="col-12 minh_100px p-4 text-center">
+                <h2 id="time_text"></h2>
+                <h4 id="brief_review"></h4>
+            </div>
+
+            <div class="col-12">
+                <div class="card bg-light mx-5 mb-4">
+                    <div id="question_div" class="card-header">
+                        <h3 id="question_text" class="p-2 text-left"></h3>
+                    </div>
+                    <div id="answer_div" class="card-body">
+                        <div class="list-group">
+                            <button id="a_text" type="button" class="list-group-item text-left answer mb-2" value="a"></button>
+                            <button id="b_text" type="button" class="list-group-item text-left answer mb-2" value="b"></button>
+                            <button id="c_text" type="button" class="list-group-item text-left answer mb-2" value="c"></button>
+                            <button id="d_text" type="button" class="list-group-item text-left answer" value="d"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="attract_text" class="row m-5">
+
+            <div class="col-12">
+                <div class="card bg-light mb-4">
+                    <div id="question_div" class="card-header">
+                        <h3 class="p-2 text-left">Rules of the Game</h3>
+                    </div>
+                    <div class="card-body">
+                        <ol class="list-group">
+                            <li class="list-group-item">Press 'Start Game' to test your Baseball knowledge.</li>
+                            <li class="list-group-item">You'll be presented with 10 random Baseball trivia questions
+                                from the collection.</li>
+                            <li class="list-group-item">You have 20 seconds to submit your answer to each of the
+                                multiple choice questions.</li>
+                            <li class="list-group-item">After each incorrect guess, you'll get to see a brief summary of
+                                the correct answer.</li>
+                            <li class="list-group-item">The game will track your correct/incorrect tally and keep it
+                                displayed in realtime.</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row bg-light">
+
+            <div class="col-sm-12 border p-2 d-flex align-items-center justify-content-center">
+                <span class="small">Copyright &#169; 2019 mike14747</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

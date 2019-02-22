@@ -1,0 +1,30 @@
+body {
+    background-image: url("../images/baseball_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.h_bg {
+    background-image: url("../images/header_bg.jpg");
+}
+
+.minh_100px {
+    min-height: 100px;
+}
+
+.fw_bolder {
+    font-weight: 500;
+}
+
+.bg_correct {
+    background-color: #73e973 !important;
+}
+
+.bg_incorrect {
+    background-color: #f1b0b7 !important;
+}
+
+.answer:hover {
+    background-color: #abdde5;
+}
