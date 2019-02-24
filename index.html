@@ -48,37 +48,55 @@
         <div id="status" class="row bg-info">
 
             <div class="col-4 d-flex justify-content-center">
-                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Correct: <span id="correct">0</span></p>
+                <p class=" m-1 px-3 py-2 bg-white fw_bolder overflow-auto">Correct: <span id="correct">0</span></p>
             </div>
 
             <div class="col-4 d-flex justify-content-center">
-                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Incorrect: <span id="incorrect">0</span></p>
+                <p class="m-1 px-3 py-2 bg-white fw_bolder overflow-auto">Incorrect: <span id="incorrect">0</span></p>
             </div>
 
             <div class="col-4 d-flex justify-content-center">
-                <p class="m-2 px-3 py-2 bg-white fw_bolder overflow-auto">Remaining: <span id="remaining">10</span></p>
+                <p class="m-1 px-3 py-2 bg-white fw_bolder overflow-auto">Remaining: <span id="remaining">0</span></p>
             </div>
 
         </div>
 
-        <div id="game_area" class="row">
+        <div id="game_area" class="row  m1_fluid">
 
-            <div id="timer_info" class="col-12 minh_100px p-4 text-center">
-                <h2 id="time_text"></h2>
-                <h4 id="brief_review"></h4>
+            <div class="col-12 minh_100px">
+
+                <div id="timer_info" class="col-12">
+                    <h2 id="time_text" class="text-center m-0 pt-3"></h2>
+                </div>
+
+                <div id="briefDiv" class="col-12 p-2 minh_100px">
+                    <p id="brief_review" class="brief_text mx-2"></p>
+                    <p class="text-secondary text-right small mb-0">
+                        <span id="briefTime"></span>
+                        <span class="text-seconday mx-2 spacer_bar"> | </span>
+                        <span id="pause"><a href="#">Pause</a></span>
+                        <span class="text-seconday mx-2 spacer_bar"> | </span>
+                        <span id="dismiss" class="mr-4"><a href="#">Dismiss</a></span>
+                    </p>
+                </div>
+
             </div>
 
-            <div class="col-12">
-                <div class="card bg-light mx-5 mb-4">
+            <div id="question_card" class="col-12">
+                <div class="card bg-light">
                     <div id="question_div" class="card-header">
-                        <h3 id="question_text" class="p-2 text-left"></h3>
+                        <h4 id="question_text" class="p-2 text-left"></h4>
                     </div>
                     <div id="answer_div" class="card-body">
                         <div class="list-group">
-                            <button id="a_text" type="button" class="list-group-item text-left answer mb-2" value="a"></button>
-                            <button id="b_text" type="button" class="list-group-item text-left answer mb-2" value="b"></button>
-                            <button id="c_text" type="button" class="list-group-item text-left answer mb-2" value="c"></button>
-                            <button id="d_text" type="button" class="list-group-item text-left answer" value="d"></button>
+                            <button id="a_text" type="button" class="list-group-item text-left answer mb-2"
+                                value="a"></button>
+                            <button id="b_text" type="button" class="list-group-item text-left answer mb-2"
+                                value="b"></button>
+                            <button id="c_text" type="button" class="list-group-item text-left answer mb-2"
+                                value="c"></button>
+                            <button id="d_text" type="button" class="list-group-item text-left answer mb-2"
+                                value="d"></button>
                         </div>
                     </div>
                 </div>
@@ -86,7 +104,7 @@
 
         </div>
 
-        <div id="attract_text" class="row m-5">
+        <div id="attract_text" class="row m1_fluid">
 
             <div class="col-12">
                 <div class="card bg-light mb-4">
@@ -112,7 +130,7 @@
 
         </div>
 
-        <div class="row bg-light">
+        <div class="row bg-light mt-4">
 
             <div class="col-sm-12 border p-2 d-flex align-items-center justify-content-center">
                 <span class="small">Copyright &#169; 2019 mike14747</span>

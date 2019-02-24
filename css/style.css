@@ -10,7 +10,7 @@ body {
 }
 
 .minh_100px {
-    min-height: 100px;
+    min-height: 100px !important;
 }
 
 .fw_bolder {
@@ -27,4 +27,40 @@ body {
 
 .answer:hover {
     background-color: #abdde5;
+}
+
+.incorrect_brief {
+    background-color: #fff3e0;
+    color: #bf360c;
+}
+
+.correct_brief {
+    background-color: #d4edda;
+    color: #343a40;
+}
+
+.end_brief {
+    background-color: #d1ecf1;
+    color: #343a40;
+}
+
+.brief_text {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.m1_fluid {
+    margin: 3rem 3rem;
+}
+
+@media (max-width: 991.98px) {
+    .m1_fluid {
+        margin: 2rem 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .m1_fluid {
+        margin: 2rem 0;
+    }
 }
