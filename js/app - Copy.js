@@ -20,6 +20,7 @@ $(document).ready(function () {
     var endTime = 0;
     var endDismiss = "";
     var gameover = true;
+    var answerCounter = 0;
 
     // hide parts of the page that aren't used until the game is started
     $("#game_area").hide();
@@ -318,6 +319,22 @@ $(document).ready(function () {
     }
 
     function endTimeout(eT) {
+        $("#pause").on("click", function () {
+            if (gameover) {
+                clearTimeout(endDismiss);
+                clearInterval(endInterval);
+                $("#briefTime").hide();
+                $(".spacer_bar").hide();
+                $("#pause").hide();
+            }
+        });
+        $("#dismiss").on("click", function () {
+            if (gameover) {
+                clearTimeout(endDismiss);
+                clearInterval(endInterval);
+                return endTimeout(0);
+            }
+        });
         $("#question_card").hide();
         $("#briefTime").show();
         $(".spacer_bar").show();
@@ -342,6 +359,22 @@ $(document).ready(function () {
     }
 
     function briefTimeout(dT) {
+        $("#pause").on("click", function () {
+            if (!gameover) {
+                clearTimeout(briefDismiss);
+                clearInterval(briefInterval);
+                $("#briefTime").hide();
+                $(".spacer_bar").hide();
+                $("#pause").hide();
+            }
+        });
+        $("#dismiss").on("click", function () {
+            if (!gameover) {
+                clearTimeout(briefDismiss);
+                clearInterval(briefInterval);
+                return briefTimeout(0);
+            }
+        });
         briefDismiss = setTimeout(function () {
             if (remaining > 0) {
                 $(".answer").removeClass("bg_correct bg_incorrect correct_brief")
@@ -423,70 +456,40 @@ $(document).ready(function () {
         }
     }
 
-    function answerQuestion(thisValue) {
-        clearInterval(timerInterval);
-        if (curTime > 0 && !clicked) {
-            clicked = true;
-            // the player selected an answer and the timer is still above 0 seconds remaining
-            if (thisValue == questions[questionCounter].correct) {
-                $("#" + thisValue + "_text").addClass("bg_correct");
-                $("#" + thisValue + "_text").append("<span class='ml-4 fw_bolder'> Correct!</span>");
-                timeEnded("right");
-            } else {
-                $("#" + thisValue + "_text").addClass("bg_incorrect");
-                $("#" + thisValue + "_text").append("<span class='ml-4 fw_bolder'> Incorrect!</span>");
-                timeEnded("wrong");
-            }
-        }
-        return;
-    }
-
-    $(".answer").on("click", function () {
-        if (!clicked) {
-            answerQuestion(this.value);
-        }
-    });
-
     function newQuestion() {
         $("#briefDiv").hide();
         $("#time_text").show();
         curTime = questionTime;
-        // start the question countdown timer
+        // start the countdown timer
         timerInterval = setInterval(runTimer, 1000);
         $("#time_text").removeClass("text-danger").addClass("text-dark");
         $("#time_text").text("Time Remaining: " + curTime);
-        // show the current question and possible answers
+        // show the current question and answer
         $("#question_text").text(questions[questionCounter].question);
         $("#a_text").text("A. " + questions[questionCounter].a);
         $("#b_text").text("B. " + questions[questionCounter].b);
         $("#c_text").text("C. " + questions[questionCounter].c);
         $("#d_text").text("D. " + questions[questionCounter].d);
+        $(".answer").on("click", function () {
+            clearInterval(timerInterval);
+            if (curTime > 0 && !clicked) {
+                clicked = true;
+                // the player selected an answer and the timer is still above 0 seconds remaining
+                if (this.value == questions[questionCounter].correct) {
+                    $(this).addClass("bg_correct");
+                    $(this).append("<span class='ml-4 fw_bolder'> Correct!</span>");
+                    timeEnded("right");
+                } else {
+                    $(this).addClass("bg_incorrect");
+                    $(this).append("<span class='ml-4 fw_bolder'> Incorrect!</span>");
+                    timeEnded("wrong");
+                }
+            }
+            answerCounter++;
+            console.log("Answer " + this.value + " was clicked " + answerCounter + " time(s).");
+        });
         return;
     }
-
-    $("#pause").on("click", function () {
-        if (!gameover) {
-            clearTimeout(briefDismiss);
-            clearInterval(briefInterval);
-        } else {
-            clearTimeout(endDismiss);
-            clearInterval(endInterval);
-        }
-        $("#briefTime").hide();
-        $(".spacer_bar").hide();
-        $("#pause").hide();
-    });
-    $("#dismiss").on("click", function () {
-        if (!gameover) {
-            clearTimeout(briefDismiss);
-            clearInterval(briefInterval);
-            return briefTimeout(0);
-        } else {
-            clearTimeout(endDismiss);
-            clearInterval(endInterval);
-            return endTimeout(0);
-        }
-    });
 
     $("#start_btn").on("click", function () {
         correct = 0;
@@ -503,7 +506,10 @@ $(document).ready(function () {
         $("#game_area").show();
         $("#question_card").show();
         document.getElementById("ballgameSound").play();
-        ballgameSound.volume = 0.25;
+        ballgameSound.volume = 0.5;
+        $("#ballgameSound").animate({
+            volume: 0.1
+        }, 4000);
         questionCounter = 0;
         questions.sort(function () { return 0.5 - Math.random() });
         newQuestion();

@@ -31,15 +31,32 @@
 
 <body>
 
+    <audio id="tickSound">
+        <source src="sounds/tick.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="wrongSound">
+        <source src="sounds/wrong.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="correctSound">
+        <source src="sounds/correct.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="ballgameSound">
+        <source src="sounds/ballgame.mp3" type="audio/mp3">
+    </audio>
+
     <div class="container bg-white border my-2">
 
-        <div class="row h_bg border">
+        <div class="row h_bg border d-flex align-items-center">
 
-            <div class="col-9 header_bg p-4">
-                <h1 class="text-bolder">Baseball Trivia<span class="small">... test your baseball knowledge!</span></h1>
+            <div class="col-9 header_bg p_header">
+                <h1 class="text-bolder">Baseball Trivia<span class="small extra_text">... test your baseball
+                        knowledge!</span></h1>
             </div>
 
-            <div id="start_div" class="col-3 p-4 text-center">
+            <div id="start_div" class="col-3 text-center p_header">
                 <button id="start_btn" type="button" class="btn-lg btn-success">Start Game</button>
             </div>
 
@@ -107,7 +124,7 @@
         <div id="attract_text" class="row m1_fluid">
 
             <div class="col-12">
-                <div class="card bg-light mb-4">
+                <div class="card bg-light">
                     <div id="question_div" class="card-header">
                         <h3 class="p-2 text-left">Rules of the Game</h3>
                     </div>
@@ -118,10 +135,15 @@
                                 from the collection.</li>
                             <li class="list-group-item">You have 20 seconds to submit your answer to each of the
                                 multiple choice questions.</li>
-                            <li class="list-group-item">After each incorrect guess, you'll get to see a brief summary of
+                            <li class="list-group-item">After each answer is clicked, you'll get to see a brief summary
+                                of
                                 the correct answer.</li>
+                            <li class="list-group-item">You'll have 10 seconds to review the brief explanation of the
+                                correct answer, where you can pause the timer or dismiss it early.</li>
                             <li class="list-group-item">The game will track your correct/incorrect tally and keep it
                                 displayed in realtime.</li>
+                            <li class="list-group-item">At the end of the 10 questions, you can review your final results.</li>
+                            <li class="list-group-item">After reviewing your results, press 'Start Game' to play again.</li>
                         </ol>
                     </div>
                 </div>
@@ -130,7 +152,7 @@
 
         </div>
 
-        <div class="row bg-light mt-4">
+        <div class="row bg-light">
 
             <div class="col-sm-12 border p-2 d-flex align-items-center justify-content-center">
                 <span class="small">Copyright &#169; 2019 mike14747</span>

@@ -13,6 +13,14 @@ body {
     min-height: 100px !important;
 }
 
+.extra_text {
+    display: show;
+}
+
+.p_header {
+    padding: 2rem;
+}
+
 .fw_bolder {
     font-weight: 500;
 }
@@ -50,17 +58,26 @@ body {
 }
 
 .m1_fluid {
-    margin: 3rem 3rem;
+    margin: 1rem 3rem;
 }
 
 @media (max-width: 991.98px) {
     .m1_fluid {
-        margin: 2rem 2rem;
+        margin: 1rem 2rem;
+    }
+    .p_header {
+        padding: .5rem 1rem;
     }
 }
 
 @media (max-width: 767.98px) {
     .m1_fluid {
-        margin: 2rem 0;
+        margin: 1rem 0;
+    }
+    .extra_text {
+        display: none;
+    }
+    .p_header {
+        padding: .5rem;
     }
 }
