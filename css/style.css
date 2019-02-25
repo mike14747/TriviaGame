@@ -25,6 +25,14 @@ body {
     font-weight: 500;
 }
 
+.h4_res {
+    margin: 0.25rem 0.75rem;
+}
+
+.card-header {
+    margin: 0;
+}
+
 .bg_correct {
     background-color: #73e973 !important;
 }
@@ -66,7 +74,14 @@ body {
         margin: 1rem 2rem;
     }
     .p_header {
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .h4_res {
+        font-size: 1.3rem;
+        margin: 0.25rem 0.5rem;
+    }
+    .card-header {
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -79,5 +94,12 @@ body {
     }
     .p_header {
         padding: .5rem;
+    }
+    .h4_res {
+        font-size: 1.1rem;
+        margin: 0.25rem;
+    }
+    .card-header {
+        padding: 0.5rem;
     }
 }
