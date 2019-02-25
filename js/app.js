@@ -328,7 +328,7 @@ $(document).ready(function () {
         } else if (correct <= (.5 * questionsGame)) {
             extra_text = "Maybe you're a little rusty. Try playing again."
         } else if (correct <= (.7 * questionsGame)) {
-            extra_text = "Not too shabby!."
+            extra_text = "Not too shabby!"
         } else {
             extra_text = "Great job! You're obviously a baseball fan."
         }
