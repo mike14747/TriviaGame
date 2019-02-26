@@ -21,6 +21,11 @@ body {
     padding: 2rem;
 }
 
+.my_res {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .fw_bolder {
     font-weight: 500;
 }
@@ -66,12 +71,12 @@ body {
 }
 
 .m1_fluid {
-    margin: 1rem 3rem;
+    margin: 3rem 3rem;
 }
 
 @media (max-width: 991.98px) {
     .m1_fluid {
-        margin: 1rem 2rem;
+        margin: 2rem 2rem;
     }
     .p_header {
         padding: 0.5rem 1rem;
@@ -101,5 +106,9 @@ body {
     }
     .card-header {
         padding: 0.5rem;
+    }
+    .my_res {
+        margin-top: 0rem;
+        margin-bottom: 0rem;
     }
 }
